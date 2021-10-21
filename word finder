@@ -1,0 +1,73 @@
+##include<stdio.h>
+#include<string.h>
+
+ int main ()
+  {
+       char s[20000];
+       int i ,j ;
+       char *p=s,x[20];
+
+        printf("Enter the string ");
+        scanf("%[^\n]",p);
+        int k ;
+
+        getchar();
+        printf("enter the word to search ");
+        scanf("%s",x);
+
+
+          int o=strlen(x);
+
+             int n=strlen(p);
+
+           for(i=0;i<n;i++)
+           {
+               if(p[i]==x[0])
+
+                {
+
+                     k=1;
+
+                   for(j=0;x[j]!='\0';j++)
+
+                        {
+                            if(p[i+j]!=x[j])
+                            {
+
+
+                                k=0;
+                                break;
+
+                            }
+
+                        }
+                           if(k==1)
+                        {
+                         printf("found at index %d\n",i);
+
+
+
+                        }
+
+
+                }
+
+
+           }
+
+            printf("not found ");
+
+
+
+
+
+           //if(k==1)
+          // printf("found at index %d",i);
+           //else
+           //printf("not found");
+
+
+
+
+  }
+  // for first occurence just change the for loop in reverse
