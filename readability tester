@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<math.h>
+#include<cs50.h>
+ int compute(string text );
+
+int main ()
+{
+   string text=get_string("enter the text \n");
+   int read=compute(text);
+
+     if(read>16)
+     printf("Grade 16+\n");
+     else if(read<1)
+     printf("Grade 1\n");
+     else
+     printf("Grade %d\n",read);
+
+
+}
+
+
+int compute(string text)
+
+
+
+{
+
+
+
+       int let=0,words=0,sen=0,i;
+       char prevChar='\0';
+
+
+         for(i=0;text[i]!='\0';i++)
+
+        {
+          if((text[i]>='a' && text[i]<='z')||(text[i]>='A' && text[i]<='Z'))
+          {
+           let++;
+          }
+
+          if(text[i]==' '||text[i]=='\0'||text[i]=='\t'||text[i]=='\n')
+            {
+
+               if(prevChar != ' ' && prevChar != '\n' && prevChar != '\t' && prevChar != '\0')
+            {
+
+                words++;
+            }
+
+
+          }
+          if(text[i]=='.'||text[i]=='!'||text[i]=='?')
+          {
+           if(prevChar!='.')
+           {
+           sen++;
+           }
+          }
+
+           prevChar=text[i];
+
+
+        }
+          words++;
+    
+      printf("words =%d,letters=%d sentences=%d",words,let,sen);
+      
+
+
+         double S,L=0.0,z,y;
+        S=let*100;
+        z=S/words;
+        L=sen*100;
+        y=L/words;
+
+        int index = round(0.0588 * z - 0.296 * y - 15.8);
+
+
+          return index;
+
+
+}
+
