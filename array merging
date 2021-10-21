@@ -1,0 +1,59 @@
+
+#include<stdio.h>
+
+  int main()
+   {
+        int n,m,j,x,i;
+         printf("Enter the length of the array");
+         scanf("%d",&n);
+       printf("Enter the length of the second array");
+         scanf("%d",&m);
+
+          int ar[n];
+          int ary[m];
+
+         printf("enter elements first ar");
+          for(i=0;i<n;i++)
+           {
+                scanf("%d",&ar[i]);
+
+           }
+           int k ;
+
+
+        printf("enter elements first ar");
+          for(i=0;i<m;i++)
+           {
+                scanf("%d",&ary[i]);
+
+           }
+            int  b=n+m;
+             int arf[b];
+
+              for(i=0;i<n;i++)
+               {
+                   arf[i]=ar[i];
+
+               }
+               for(i=0,j=n;i<m&&j<b;j++,i++)
+               {
+                    arf[j]=ary[i];
+
+               }
+               printf("\n arf[%d] Array Elements After Merging \n", b);
+
+                for(i=0;i<b;i++)
+                {
+                    printf(" %d ",arf[i]);
+
+                }
+
+
+
+
+
+
+
+
+
+   }
