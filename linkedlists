@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node{
+
+     int data ;
+     struct node *link;
+
+}node;
+
+void print(node *head);
+void deci(node *head);
+node* insert(node *head);
+
+
+
+
+int main()
+
+{
+
+  node *head;
+  int n ;
+
+    head=malloc(sizeof(node));
+    print(head);
+   
+    while(1)
+
+         {
+            printf("\npress [1] to print\n press [2] to insert at the beggining \n ");
+            scanf("%d",&n);
+       switch(n)
+       {
+
+         
+         case 1: deci(head);
+                 break;
+        case 2: head=insert(head);
+                  break;
+
+         default:exit(0);
+         
+
+       }
+         }
+         
+
+}
+
+void print(node *head)
+{
+        int n ;
+        char c;
+
+
+      printf("enter the number\n ");
+      scanf("%d",&head->data);
+    
+       printf("do you want to create another link?");
+        while((getchar())!='\n');
+        c=getchar();
+
+     
+
+     if(c=='Y'||c=='y')
+     {
+         head->link=malloc(sizeof(node));
+         
+         print(head->link);  
+         
+         
+     }
+      else{
+           
+           head->link=NULL;
+      }
+
+     
+}
+
+void deci (node *head)
+{
+    while(head!=NULL)
+    {
+        printf("%d\n",head->data);
+       
+        head=head->link;
+
+    }
+}
+
+node* insert(node *head)
+{
+   node *temp;
+   int n ;
+
+   printf("enter the data for inserting at the beggining ");
+   scanf("%d",&n);
+
+    temp=malloc(sizeof(node));
+    temp->data=n;
+    temp->link=NULL;
+    temp->link=head;
+    head=temp;
+    return head;
+
+    
+
+
+
+}
