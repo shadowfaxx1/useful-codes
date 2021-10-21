@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<string.h>
+
+ int main ()
+  {
+       char s[100];
+       int i ,j ;
+       char *p=s,x[20],m[20];
+
+        printf("Enter the string ");
+        scanf("%[^\n]",p);
+        int k=0 ,l;
+        getchar();
+        printf("enter the word to search ");
+        scanf("%s",x);
+        getchar();
+        printf("enter the replacing word");
+        scanf("%s",m);
+        
+
+
+          int o=strlen(x);
+
+             int n=strlen(p);
+             int g=strlen(m);
+             
+
+           for(i=0;i<n;i++)
+           {
+                
+
+                
+
+                     k=1;
+
+                   for(j=0;j<o;j++)
+
+                        {
+                            if(p[i+j]!=x[j])
+                            {
+                              k=0;
+                              break;
+                              
+
+                            }
+
+                        }
+                        
+                        if(k==1)
+                        { 
+                         for(l=i;l<=n-o+g;l++)
+                         {
+                         
+                           x[l]=m[l];
+                           
+                         }
+                         
+                         
+
+                        }
+                
+           }
+           printf("%s",p);
+           
+  }
+  // for first occurence just change the for loop in reverse S
+  
+  
+ 
