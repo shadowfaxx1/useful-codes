@@ -1,0 +1,101 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define  n 9  
+  int p=-1,k=-1;
+  int ar[n];
+     
+int enqueue();
+int dequeue();
+void show();
+
+int main()
+
+ { 
+     int in,i,d;
+     while(1)
+     {
+       printf("enter 1 for enqueue\n enter 2 for dequeue\n enter 3 for show pos of pointers \n enter 4 for exit \n");
+       scanf("%d",&in);
+     switch(in)
+     
+      {
+          
+        case 1:  enqueue();
+                       break;
+                   
+        case 2:  dequeue();
+                      break;
+                
+                
+         case 3:show();
+                    break;
+                    
+        case 4: exit(0);
+                break;
+                
+        default: printf("enter between 1-4\n");
+          
+          
+          
+          
+      }
+      
+     }
+}      
+ int enqueue()
+ {
+      int z;
+      
+      if(p==n-1)
+     {
+          printf("overflow\n");
+          
+     }
+     else 
+     {
+       if(p==-1)
+          k=0;
+          
+         printf("enter item");
+         scanf("%d",&z);
+         printf("enqueued item =%d\n",z);
+         printf("success\n");
+         
+          p++;
+          ar[p]=z;
+       
+      }
+      return 0;
+  
+ }
+ 
+ int dequeue()
+ {
+  
+       
+      
+     if(p==-1)
+     {
+         printf("underflow\n");
+         
+     }
+     else
+     {
+         
+         printf("dequeued item =%d\n",ar[k]);
+         printf("success\n");
+         
+         k=k+1;
+                  
+       }
+       return 0;       
+     }
+    
+void show ()
+     {
+      printf("front =%d\n ",p);
+      printf("rear=%d\n",k);
+      
+     }
+     
+     
