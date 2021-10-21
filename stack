@@ -1,0 +1,91 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define sax 6
+
+ int t=-1;                          
+ int s[sax];
+ 
+ void push();
+void pop();
+void show();
+
+ 
+ int main()
+ {
+      
+       int ch;
+    
+     while(1)
+     {
+           printf("enter the choice\n 1 for push \n 2 for pop \n 3 for show\n 4 for exit \n");
+           scanf("%d",&ch);
+           
+           switch(ch)
+           {
+                
+                 case 1: push();
+                             break;
+                 case 2: pop();
+                          break;
+                 
+                 case 3:show();
+                         break;
+                 
+                 case 4: exit(0);
+                 
+                 default: printf("not a valid choice idiot\n ");
+                
+           }
+           
+     }
+}
+   
+   void push ()
+    {
+        int x; 
+        if(t==sax-1)
+        printf("overflow\n");
+        else
+        {
+             
+             printf("Enter the int ");
+             scanf("%d",&x);
+             t=t+1;
+             s[t]=x;
+             
+            
+        }
+    }
+        
+        void pop ()
+        {
+            if(t==-1)
+            {
+                printf("underflow\n");
+                
+            }
+            else
+            {
+              printf("popped out%d",s[t]);
+              t=t-1;
+              
+                
+            }
+            
+        }
+        
+        void show()
+        { 
+             if(t==-1)
+            printf("underflow\n");
+            else
+            {
+                printf("all entered units are\n");
+               for(int i=t;i>=0;i--)
+                 printf("%d\n",s[i]);
+                 
+            }
+        }
+        
+    
