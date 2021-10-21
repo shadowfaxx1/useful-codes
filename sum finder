@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<math.h>
+
+int get_int();
+float pal(int n,int m);
+int fun1(int n ,int s);
+int fun2(char p);
+ int pri(int n);
+ int main()
+
+       { 
+               int n,m,k;
+               
+         
+                do{
+            n=get_int();
+            m=get_int();
+           
+                  printf("is that the number %d raised to %d \n",n,m);
+                   printf(" if not this press 99 to renter\n press c to continue");
+                  k=get_int();
+                  
+                  
+                }while(k==99);
+
+                  printf("here is %.2f\n",pal(n,m));
+                    
+                 
+
+                }
+
+                int get_int(){
+                      int n;
+
+                     scanf("%d",&n);
+                      return (n);
+
+                }
+                float pal(int n,int m){ 
+               
+                 float k= pow(n,m);
+                 float p=1.0;
+                   if(n>=0)
+                    p=k;
+                    else
+                     p=p/k;
+                     
+                   return (p);
+                     
+                    
+                     
+                     
+                  
+                           
+                    
+                }
+                
