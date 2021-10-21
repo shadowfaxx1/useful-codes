@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<cs50.h>
+
+ int main()
+ {
+      long i,j,n,p=0,b,ck;
+                int mod;
+
+        n= get_double("write down your card number");
+
+        printf("is that right? =%ld\n\n",n);
+        ck=(n/1000000000000000);
+        mod=ck%10;
+
+        int fn,sum=0,r,z;
+
+        i=0;
+ // for getting the indiviual numbers
+        while(n>0)
+        {
+
+           r=n%10;
+            i++;
+        // taking the alternate number and their sums from second last and multiplying by 2
+          if(i%2==0)
+             {
+            int m,l=0;
+
+                z=r*2 ;
+
+               if(z>9)
+                 {
+
+                    l=l+z%10;
+                      z=z/10;
+
+                 }
+             p=p+z+l;
+
+           }
+
+           // sum of remaining numbers
+           else if (i%2!=0)
+                   {
+                        sum=sum+r;
+
+                   }
+                 fn=sum+p;
+
+
+           n=n/10;
+
+           //printf("%li=%d\n",i,r);
+        }
+
+              // printf("mod=%d\n\n",mod);
+         // to check the checksum;
+             int ch=fn%10;
+                //printf("ch=%d\n\n",ch);
+                if(ch==0&&i==15)
+          {
+           printf("VALID\n AMEX\n");
+          }
+
+           else if (ch==0&&i==16&&mod!=4)
+           {
+           printf("VALID\n MASTERCARD\n");
+           }
+
+         else if(ch==0&&ck==4&&mod==4&&(i==13||i==14||i==16))
+         {
+             printf("VALID\n\n VISA\n\n");
+         }
+
+         else if(ch!=0)
+         {
+         printf("INVALID\n\n\n\n");
+         }
+
+        //  printf("sum of the other numbers=%li\n",p);
+         // printf("final sum of numbers %d\n\n",fn);
+
+        }
+
+
+
+
+
+
+
